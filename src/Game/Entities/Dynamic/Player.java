@@ -2,6 +2,7 @@ package Game.Entities.Dynamic;
 
 import Main.GameSetUp;
 import Main.Handler;
+import Game.GameStates.PauseState;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -19,6 +20,7 @@ public class Player {
     public int moveCounter;
 
     public String direction;
+    public boolean unPaused = true;
 
     public Player(Handler handler){
         this.handler = handler;
@@ -55,9 +57,14 @@ public class Player {
         	handler.getWorld().appleOnBoard = true;
         	}
         	
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
+        }if(unPaused = true) {
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
         	//render();
+        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
+        	//GameState.setState(handler.getGame().pauseState);
+        }
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_PLUS)) {
+        	
         	        	
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) {
         	

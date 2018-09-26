@@ -16,17 +16,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-/**
- * Created by AlexVR on 7/1/2018.
- */
-
 public class GameSetUp implements Runnable {
     private DisplayScreen display;
     private int width, height;
     public String title;
 
-    private boolean running = false;
+    private static boolean running = false;
     private Thread thread;
 
     private BufferStrategy bs;
@@ -118,11 +113,11 @@ public class GameSetUp implements Runnable {
 
     public void run(){
 
-        //initiallizes everything in order to run without breaking
+        //Initializes everything in order to run without breaking
         init();
         int speed = 5;
         int fps = 60;
-        double timePerTick = 1000000000 / fps;
+        double timePerTick = speed* 100000000 / fps;
         double delta = 0;
         long now;
         long lastTime = System.nanoTime();
@@ -131,8 +126,9 @@ public class GameSetUp implements Runnable {
 
         while(running){
             //makes sure the games runs smoothly at 60 FPS
-        	/*if(speed>0 && speed<11) {
-        	fps *= 1/speed;
+        	/*if(
+        	 * if(speed>0 && speed<11) {
+        	speed++;
         	}else return;*/
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
