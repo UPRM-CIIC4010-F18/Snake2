@@ -3,6 +3,7 @@ package Game.Entities.Dynamic;
 import Main.GameSetUp;
 import Main.Handler;
 import Game.GameStates.PauseState;
+import Game.GameStates.State;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -59,13 +60,14 @@ public class Player {
         	
         }if(unPaused = true) {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
-        	//render();
+        	State.setState(handler.getGame().pauseState);
+        	unPaused = false;
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
-        	//GameState.setState(handler.getGame().pauseState);
-        }
+        	State.setState(handler.getGame().pauseState);
+        	unPaused = false;
+        	}       
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_PLUS)) {
         	
-        	        	
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) {
         	
         }
