@@ -6,9 +6,6 @@ import Main.Handler;
 import java.awt.*;
 import java.util.Random;
 
-/**
- * Created by AlexVR on 7/2/2018.
- */
 public class WorldOne extends WorldBase{
 
     public WorldOne (Handler handler) {
