@@ -19,7 +19,7 @@ public abstract class WorldBase {
     public Boolean appleOnBoard;
     protected Apple apple;
     public Boolean[][] appleLocation;
-
+    
     public Boolean[][] playerLocation;
 
     public LinkedList<Tail> body = new LinkedList<>();

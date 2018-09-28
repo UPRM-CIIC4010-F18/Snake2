@@ -33,7 +33,7 @@ public class DisplayScreen {
         frame.setBackground(Color.green);
 
         try {
-            frame.setIconImage(ImageIO.read(new File("res/Sheets/icon.png")));
+            frame.setIconImage(ImageIO.read(new File("res/Sheets/download.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
