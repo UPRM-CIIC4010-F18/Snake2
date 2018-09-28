@@ -17,6 +17,7 @@ public class Player {
 
     public int xCoord;
     public int yCoord;
+    //yan was here
 public int speed = 6;
     public int moveCounter;
 
@@ -65,7 +66,8 @@ public int speed = 6;
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
         	State.setState(handler.getGame().pauseState);
         	unPaused = false;
-        	}       
+        	}  
+        //Yan was here
         }if (speed >= 1 && speed <=10) {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
         	speed --;
