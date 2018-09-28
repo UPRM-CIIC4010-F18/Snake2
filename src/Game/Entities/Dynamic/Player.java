@@ -57,7 +57,7 @@ public class Player {
         	Eat();
         	handler.getWorld().appleOnBoard = true;
         	}
-        //hi	
+        //hi	dude
         }if(unPaused = true) {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
         	State.setState(handler.getGame().pauseState);
