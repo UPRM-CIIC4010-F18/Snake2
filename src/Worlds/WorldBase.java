@@ -39,14 +39,17 @@ public abstract class WorldBase {
 
     public void render(Graphics g){
 
-        for (int i = 0; i <= 600; i = i + GridPixelsize) {
+        for (int i = 0; i <= 780; i = i +  GridPixelsize) {
 
             g.setColor(Color.black);
             g.drawLine(i,0,i,handler.getHeight());
             g.drawLine(0, i, handler.getWidth() , i);
             
-
+            g.drawString("Score: " + String.valueOf(player.Counter), handler.getWidth()-345,  handler.getHeight()-550);
+            g.drawString("Shields: "+ String.valueOf(player.shield) +"/ 3"  , handler.getWidth()-100, handler.getHeight()-100); 
+            g.drawString("Speed: " + String.valueOf(player.speed), handler.getWidth()-600, handler.getHeight()-100);
         }
+        
 
 
 

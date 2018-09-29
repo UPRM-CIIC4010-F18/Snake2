@@ -18,8 +18,10 @@ public class Player {
     public int xCoord;
     public int yCoord;
     //yan was here
-public int speed = 6;
+    public int speed = 5;
     public int moveCounter;
+    public int Counter;
+    public int shield;
 
     public String direction;
     public boolean unPaused = true;
@@ -32,7 +34,14 @@ public int speed = 6;
         direction= "Right";
         justAte = false;
         lenght= 1;
+        Counter=0;
+        speed = 5;
+        shield = 0;
+        
 
+    }
+    public int getSpeed() {
+    	return speed;
     }
 
     public void tick(){
@@ -56,6 +65,7 @@ public int speed = 6;
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)){
         	if(lenght <= 7) {
         	Eat();
+        	Counter--;
         	handler.getWorld().appleOnBoard = true;
         	}
         //hi	dude
@@ -68,15 +78,23 @@ public int speed = 6;
         	unPaused = false;
         	}  
         //Yan was here
-        }if (speed >= 1 && speed <=10) {
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
-        	speed --;
-        	
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) {
-        	speed ++;
         }
-        }
-
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS))
+			if (speed > 3) {
+        		speed--;
+        		
+        	}else{
+        		return;
+        	}if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
+        		if (speed < 7) {
+            		speed++;
+            	}else{
+            		return;
+            	}
+        	}
+        
+        
+        
     }
 
     public void checkCollisionAndMove(){
@@ -132,7 +150,7 @@ public int speed = 6;
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-                g.setColor(Color.orange);
+                g.setColor(Color.red);
 
                 if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
@@ -149,6 +167,7 @@ public int speed = 6;
 
     public void Eat(){
         lenght++;
+        Counter++;
         Tail tail= null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
         handler.getWorld().appleOnBoard=false;
