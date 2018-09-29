@@ -44,7 +44,7 @@ public abstract class WorldBase {
             g.setColor(Color.black);
             g.drawLine(i,0,i,handler.getHeight());
             g.drawLine(0, i, handler.getWidth() , i);
-            
+            //reduce grid reach
             g.drawString("Score: " + String.valueOf(player.Counter), handler.getWidth()-345,  handler.getHeight()-550);
             g.drawString("Shields: "+ String.valueOf(player.shield) +"/ 3"  , handler.getWidth()-100, handler.getHeight()-100); 
             g.drawString("Speed: " + String.valueOf(player.speed), handler.getWidth()-600, handler.getHeight()-100);
