@@ -5,9 +5,6 @@ import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-/**
- * Created by AlexVR on 7/1/2018.
- */
 public class Images {
 
 

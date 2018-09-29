@@ -103,6 +103,10 @@ public class Player {
         int y = yCoord;
         switch (direction){
             case "Left":
+            	for (int i = 0; i < handler.getWorld().body.size(); i++){
+            		if ((this.xCoord-1==handler.getWorld().body.get(i).x)&&(this.yCoord==handler.getWorld().body.get(i).y)) {
+            	}
+            	}
                 if(xCoord==0){
                     kill();
                 }else{
@@ -110,6 +114,11 @@ public class Player {
                 }
                 break;
             case "Right":
+            	for(int i = 0; i < handler.getWorld().body.size(); i++) {
+            		if((this.xCoord+1 == handler.getWorld().body.get(i).x)&&(this.yCoord == handler.getWorld().body.get(i).y)) {
+            			kill();
+            		}
+            	}
                 if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
                     kill();
                 }else{
@@ -117,6 +126,11 @@ public class Player {
                 }
                 break;
             case "Up":
+            	for(int i = 0; i < handler.getWorld().body.size(); i++) {
+            		if((this.xCoord == handler.getWorld().body.get(i).x)&&(this.yCoord-1 == handler.getWorld().body.get(i).y)) {
+            			kill();
+            		}
+            	}
                 if(yCoord==0){
                     kill();
                 }else{
@@ -124,6 +138,11 @@ public class Player {
                 }
                 break;
             case "Down":
+            	for(int i = 0; i < handler.getWorld().body.size(); i++) {
+            		if((this.xCoord == handler.getWorld().body.get(i).x)&&(this.yCoord+1 == handler.getWorld().body.get(i).y)) {
+            			kill();
+            		}
+            	}
                 if(yCoord==handler.getWorld().GridWidthHeightPixelCount-1){
                     kill();
                 }else{
