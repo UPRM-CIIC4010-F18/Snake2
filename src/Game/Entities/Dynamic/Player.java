@@ -176,12 +176,11 @@ public class Player {
                 if( handler.getWorld().body.isEmpty()){
                     if(this.xCoord!=handler.getWorld().GridWidthHeightPixelCount-1){
                         tail = new Tail(this.xCoord+1,this.yCoord,handler);
-                    }else{
-                        if(this.yCoord!=0){
+                    }else if(this.yCoord!=0){
                             tail = new Tail(this.xCoord,this.yCoord-1,handler);
                         }else{
-                            tail =new Tail(this.xCoord,this.yCoord+1,handler);
-                        }
+                            tail = new Tail(this.xCoord,this.yCoord+1,handler);
+                        
                     }
                 }else{
                     if(handler.getWorld().body.getLast().x!=handler.getWorld().GridWidthHeightPixelCount-1){
@@ -282,8 +281,8 @@ public class Player {
                 handler.getWorld().playerLocation[i][j]=false;
                 
             }
-        }
-        //GameOver();
+        
+        } State.setState(handler.getGame().gameOver);
     }
 
     public boolean isJustAte() {
