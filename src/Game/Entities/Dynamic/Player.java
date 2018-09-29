@@ -112,6 +112,7 @@ public class Player {
                 }else{
                     xCoord--;
                 }
+                //hello
                 break;
             case "Right":
             	for(int i = 0; i < handler.getWorld().body.size(); i++) {
