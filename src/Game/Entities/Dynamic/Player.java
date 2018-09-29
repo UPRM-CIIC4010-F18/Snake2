@@ -79,13 +79,13 @@ public class Player {
         	}  
         //Yan was here
         }
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS))
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS))
 			if (speed > 3) {
         		speed--;
         		
         	}else{
         		return;
-        	}if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
+        	}if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) {
         		if (speed < 7) {
             		speed++;
             	}else{
